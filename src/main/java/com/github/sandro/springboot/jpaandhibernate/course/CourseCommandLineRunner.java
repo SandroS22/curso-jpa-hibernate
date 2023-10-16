@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.github.sandro.springboot.jpaandhibernate.course.jpa.CourseJpaRepository;
 import com.github.sandro.springboot.jpaandhibernate.course.springdatajpa.CourseSpringDataJpaRepository;
 
 @Component
@@ -29,6 +28,14 @@ public class CourseCommandLineRunner implements CommandLineRunner {
 		System.out.println(repository.findById(2l));
 		System.out.println(repository.findById(3l));
 
+		System.out.println(repository.findAll());
+		System.out.println(repository.count());
+
+		System.out.println(repository.findByAuthor("Sandro"));
+		System.out.println(repository.findByAuthor(""));
+
+		System.out.println(repository.findByName("Curso Python Jpa"));
+		System.out.println(repository.findByName(""));
 	}
 
 }
